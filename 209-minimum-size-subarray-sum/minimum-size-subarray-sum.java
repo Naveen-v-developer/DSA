@@ -7,16 +7,12 @@ class Solution {
 
         for (int right = 0; right < nums.length; right++) {
 
-            // Expand the window
             sum += nums[right];
 
-            // Shrink the window while sum is enough
             while (sum >= target) {
 
                 int len = right - left + 1;
                 minLen = Math.min(minLen, len);
-
-                // Remove the left element
                 sum -= nums[left];
                 left++;
             }
